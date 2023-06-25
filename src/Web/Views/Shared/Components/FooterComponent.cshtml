@@ -1,5 +1,10 @@
-<footer class="border-top footer text-muted">
-    <div class="container">
-        &copy; 2023 - Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-    </div>
+<footer>
+    Copyright © 2018 - <span id="currentDate"></span>
+    <a target="_blank" rel="noopener" href="https://sswellington.github.io/">sswellington</a>
 </footer>
+
+
+<script type="text/javascript">
+    var currentDate = new Date().getFullYear();
+    document.getElementById("currentDate").innerHTML = currentDate;
+</script>

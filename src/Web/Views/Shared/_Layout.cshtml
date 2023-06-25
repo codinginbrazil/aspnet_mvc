@@ -11,20 +11,16 @@
     <title>@ViewData["Title"] - Web</title>
 
     <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
     <partial name="Components/HeaderComponent.cshtml" />
 
-    <div class="container">
-        <main role="main" class="pb-3">
+    <main role="main">
             @RenderBody()
-        </main>
-    </div>
+    </main>
 
     <partial name="Components/FooterComponent.cshtml" />
 
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
