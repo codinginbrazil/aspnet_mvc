@@ -1,8 +1,8 @@
 namespace Application.ViewModel;
 
-public class ErrorViewModel
+public record ErrorViewModel
 {
-	public string? RequestId;
+	public string? RequestId { get; set; }
 
 	public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 }
