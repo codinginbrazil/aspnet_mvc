@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="light" style="color-scheme: light;">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -11,11 +11,12 @@
     <title>@ViewData["Title"] - Web</title>
 
     <link rel="stylesheet" href="~/css/reset.css" asp-append-version="true" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="antialiased body-font">
     <partial name="Components/HeaderComponent.cshtml" />
 
-    <main role="main">
+    <main role="main" class="container px-5 py-12 mx-auto">
             @RenderBody()
     </main>
 
