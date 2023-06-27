@@ -8,21 +8,26 @@
     }
 }
 
-<header>
+<header class="flex h-16 justify-between">
+    <a href="/home" aria-label="SOUBE" role="link" class="ml-6 font-bold text-xl">
+        SOUBE
+    </a>
+
     <nav>
-        <ul class="flex">
-            <li class="mr-6">
-                <a href="/home" aria-label="SOUBE" role="link">SOUBE</a>
-            </li>
-            <li class="flex items-center space-x mr-6">
+        <ul class="flex items-center gap-4">
+            <li class="flex">
                 <span class="material-symbols-rounded fill">home</span>
                 <a href="/home" aria-label="Home" role="link">Home</a>
             </li>
-            <li class="flex items-center space-x mr-6">
+            <li class="flex">
+                <span class="material-symbols-rounded"> import_contacts</span>
+                <a href="#discipline" aria-label="SOUBE" role="link">Discipline</a>
+            </li>
+            <li class="flex">
                 <span class="material-symbols-rounded"> account_circle </span>
                 <a href="#profile" aria-label="SOUBE" role="link">Profile</a>
             </li>
-            <li class="flex items-center space-x mr-6">
+            <li class="flex mr-6">
                 <span class="material-symbols-rounded">menu</span>
                 <a href="#more" aria-label="SOUBE" role="link">More</a>
             </li>
