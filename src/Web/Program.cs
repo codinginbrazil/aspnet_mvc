@@ -9,19 +9,32 @@ var loggerConfiguration = new LoggerConfiguration()
 	.WriteTo.Console();
 
 var app = builder.Build();
+
+#region Environment
 if (app.Environment.IsDevelopment())
 {
 	loggerConfiguration.MinimumLevel.Verbose();
+	Log.Logger = loggerConfiguration.CreateLogger();
+	Log.Information("building the application in Development");
 }
-else
+if (app.Environment.IsStaging())
+{
+	loggerConfiguration.MinimumLevel.Verbose();
+	Log.Logger = loggerConfiguration.CreateLogger();
+	Log.Information("building the application in Staging");
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
+
+}
+if (app.Environment.IsProduction())
 {
 	loggerConfiguration.MinimumLevel.Information();
+	Log.Logger = loggerConfiguration.CreateLogger();
+	Log.Information("building the Production");
 	app.UseExceptionHandler("/Home/Error");
 	app.UseHsts();
 }
-
-Log.Logger = loggerConfiguration.CreateLogger(); 
-Log.Information("building the application");
+#endregion Environment
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -34,3 +47,4 @@ app.MapControllerRoute(
 
 Log.Information("running the application");
 app.Run();
+Log.Information("finished");
