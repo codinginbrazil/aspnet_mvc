@@ -1,5 +1,6 @@
 using Application.ViewModel;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Diagnostics;
 
 namespace Web.Controllers;
@@ -7,6 +8,7 @@ public class HomeController : Controller
 {
 	public IActionResult Index()
 	{
+		Log.Verbose("Page Visited: Home");
 		return View();
 	}
 
